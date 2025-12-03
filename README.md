@@ -1,12 +1,9 @@
 🎵 FastAPI Spotify Manager API
 
-![alt text](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![alt text](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white) ![alt text](https://img.shields.io/badge/FastAPI-0.109%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
-![alt text](https://img.shields.io/badge/FastAPI-0.109%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![alt text](https://img.shields.io/badge/Pydantic-v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white) ![alt text](https://img.shields.io/badge/Tests-Pytest-yellow?style=for-the-badge)
 
-![alt text](https://img.shields.io/badge/Pydantic-v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
-
-![alt text](https://img.shields.io/badge/Tests-Pytest-yellow?style=for-the-badge)
 Una API RESTful moderna y asíncrona construida con FastAPI que actúa como intermediario inteligente entre tus usuarios y la API de Spotify. Permite gestionar perfiles de usuarios locales, autenticarse vía OAuth2 con Spotify, buscar música y gestionar favoritos y seguidos en tiempo real.
 
 🚀 Características Principales
