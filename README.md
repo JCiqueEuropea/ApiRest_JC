@@ -7,6 +7,7 @@
 Una API RESTful moderna y asíncrona construida con FastAPI que actúa como intermediario inteligente entre tus usuarios y la API de Spotify. Permite gestionar perfiles de usuarios locales, autenticarse vía OAuth2 con Spotify, buscar música y gestionar favoritos y seguidos en tiempo real.
 
 🚀 Características Principales
+
 Gestión de Usuarios (CRUD): Creación, lectura, actualización y borrado de usuarios con validaciones estrictas (edad, formato de nombres, etc.).
 Integración Spotify OAuth2: Flujo completo de autenticación (Authorization Code Flow) para actuar en nombre del usuario.
 Búsqueda Asíncrona: Consultas de Artistas y Canciones utilizando httpx para alto rendimiento.
@@ -16,6 +17,7 @@ Arquitectura Limpia: Separación por Capas (Routes, Services, Models, Auth).
 Manejo de Errores Robusto: Respuestas HTTP estandarizadas y mensajes de error descriptivos.
 
 🛠️ Stack Tecnológico
+
 Framework: FastAPI
 Validación de Datos: Pydantic V2
 Cliente HTTP: Httpx (Async)
@@ -23,6 +25,7 @@ Testing: Pytest & Unittest Mock
 Config: Pydantic Settings (.env)
 
 📦 Estructura del Proyecto
+
 El proyecto sigue una arquitectura modular para facilitar la escalabilidad:
 code
 Bash
@@ -82,12 +85,14 @@ ENVIRONMENT="development"
 LOG_LEVEL="INFO"
 
 ▶️ Ejecución
+
 Levanta el servidor de desarrollo:
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 La API estará disponible en: http://127.0.0.1:8000
 
 📖 Documentación de la API
+
 FastAPI genera documentación interactiva automáticamente. Una vez iniciada la app, visita:
 Swagger UI: http://127.0.0.1:8000/docs
 ReDoc: http://127.0.0.1:8000/redoc
@@ -98,11 +103,13 @@ Autorizar: Acepta los permisos en Spotify. Serás redirigido y verás un JSON de
 Usar la API: Ahora puedes añadir favoritos (POST /users/{id}/favorites/artists) o seguir artistas (PUT /spotify/me/following).
 
 🧪 Testing
+
 El proyecto incluye una suite de tests completa usando pytest. Los tests de integración con Spotify utilizan Mocks, por lo que no requieren credenciales reales ni conexión a internet.
 Ejecutar tests:
 pytest -v
 
 🛡️ Manejo de Errores
+
 La API implementa un manejador global de excepciones (main.py) que transforma errores de Python en respuestas HTTP JSON estandarizadas:
 404 Not Found: Cuando no existe un usuario o un recurso en Spotify.
 401 Unauthorized: Cuando el token de Spotify ha expirado o no existe.
