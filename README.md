@@ -1,4 +1,5 @@
 🎵 FastAPI Spotify Manager API
+
 ![alt text](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 
 ![alt text](https://img.shields.io/badge/FastAPI-0.109%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
