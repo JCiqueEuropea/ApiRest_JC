@@ -1,8 +1,8 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from app import app
 from app.database.memory import fake_db, token_store
+from main import app
 
 
 @pytest.fixture(scope="module")

@@ -16,33 +16,23 @@ música y gestionar favoritos y seguidos en tiempo real.
 * **Gestión de Usuarios (CRUD):** Creación, lectura, actualización y borrado de usuarios con validaciones estrictas (
   edad,
   formato de nombres, etc.).
-
 * **Integración Spotify OAuth2:** Flujo completo de autenticación (Authorization Code Flow) para actuar en nombre del
   usuario.
-
 * **Búsqueda Asíncrona:** Consultas de Artistas y Canciones utilizando httpx para alto rendimiento.
-
 * **Favoritos:** Guardado de Artistas y Canciones favoritas en el perfil del usuario (con persistencia de metadatos de
   Spotify).
-
 * **Funcionalidad Social:** Endpoint para Seguir (Follow) artistas o usuarios en Spotify y verificar el estado de
   seguimiento.
-
 * **Arquitectura Limpia:** Separación por Capas (Routes, Services, Models, Auth).
-
 * **Manejo de Errores Robusto:** Respuestas HTTP estandarizadas y mensajes de error descriptivos.
 
 🛠️ Stack Tecnológico
 ---------------------
 
 * **Framework:** FastAPI
-
 * **Validación de Datos:** Pydantic V2
-
 * **Cliente HTTP:** Httpx (Async)
-
 * **Testing:** Pytest & Unittest Mock
-
 * **Config:** Pydantic Settings (.env)
 
 📦 Estructura del Proyecto
@@ -63,7 +53,9 @@ El proyecto sigue una arquitectura modular para facilitar la escalabilidad:
 ├── .env               # Variables de entorno (No subir al repo)
 ├── .gitignore
 ├── main.py            # Punto de entrada de la aplicación
-└── README.md
+├── README.md          
+└── requirements.txt   # Dependencias de la aplicación
+
 
 ```
 
@@ -73,7 +65,6 @@ El proyecto sigue una arquitectura modular para facilitar la escalabilidad:
 ### 1\. Prerrequisitos
 
 * Python 3.10 o superior.
-
 * Una cuenta de [Spotify for Developers](https://www.google.com/url?sa=E&q=https://developer.spotify.com/dashboard).
 
 ### 2\. Clonar el repositorio
@@ -104,7 +95,6 @@ pip install -r requirements.txt
 ### 5\. Configurar Spotify Dashboard
 
 1. Ve a tu Dashboard de Spotify y crea una App.
-
 2. Obtén el **Client ID** y **Client Secret**.
 3. En "Edit Settings", añade la siguiente **Redirect URI**:
 
@@ -143,17 +133,13 @@ La API estará disponible en: http://127.0.0.1:8000
 FastAPI genera documentación interactiva automáticamente. Una vez iniciada la app, visita:
 
 * **Swagger UI:** [http://127.0.0.1:8000/docs](https://www.google.com/url?sa=E&q=http://127.0.0.1:8000/docs)
-
 * **ReDoc:** [http://127.0.0.1:8000/redoc](https://www.google.com/url?sa=E&q=http://127.0.0.1:8000/redoc)
 
 ### Flujo de Uso Básico
 
 1. **Crear Usuario:** `POST/users/`
-
 2. **Login en Spotify:** Abre en el navegador `http://127.0.0.1:8000/spotify/auth/{user_id}/login`.
-
 3. **Autorizar:** Acepta los permisos en Spotify. Serás redirigido y verás un JSON de éxito.
-
 4. **Usar la API:** Ahora puedes añadir favoritos (`POST/users/{id}/favorites/artists`) o seguir artistas (
    `PUT/spotify/me/following`).
 
@@ -176,11 +162,8 @@ La API implementa un manejador global de excepciones (main.py) que transforma er
 estandarizadas:
 
 * `404 Not Found`: Cuando no existe un usuario o un recurso en Spotify.
-
 * `401 Unauthorized`: Cuando el token de Spotify ha expirado o no existe.
-
 * `422 Validation Error`: Cuando los datos de entrada (edad, nombre) no cumplen las reglas.
-
 * `502 Bad Gateway`: Errores de comunicación con la API externa.
 
 📝 Licencia
